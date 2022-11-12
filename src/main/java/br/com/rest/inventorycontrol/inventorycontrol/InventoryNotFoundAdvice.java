@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ControllerAdvice
 class InventoryNotFoundAdvice {
 	@ResponseBody
-	@ExceptionHandler(IvnetoryNotFoundException.class)
+	@ExceptionHandler(InvetoryNotFoundException.class)
 	@ResponseStatus(HttpStatus.NOT_FOUND)
-	String employeeNotFoundHandler(IvnetoryNotFoundException ex) {
+	String employeeNotFoundHandler(InvetoryNotFoundException ex) {
 		return ex.getMessage();
 	}
 }

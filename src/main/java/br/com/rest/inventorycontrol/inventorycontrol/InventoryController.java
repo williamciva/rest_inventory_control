@@ -22,41 +22,41 @@ class InventoryController {
 
   // Aggregate root
   // tag::get-aggregate-root[]
-  @GetMapping("/employees")
+  @GetMapping("/products")
   List<Inventory> all() {
     return repository.findAll();
   }
   // end::get-aggregate-root[]
 
-  @PostMapping("/employees")
-  Inventory newEmployee(@RequestBody Inventory newEmployee) {
-    return repository.save(newEmployee);
+  @PostMapping("/products")
+  Inventory newInventory(@RequestBody Inventory newInventory) {
+    return repository.save(newInventory);
   }
 
   // Single item
   
-  @GetMapping("/employees/{id}")
+  @GetMapping("/products/{id}")
   Inventory one(@PathVariable Long id) {
     
     return repository.findById(id)
-      .orElseThrow(() -> new IvnetoryNotFoundException(id));
+      .orElseThrow(() -> new InvetoryNotFoundException(id));
   }
 
-  @PutMapping("/employees/{id}")
-  Inventory replaceEmployee(@RequestBody Inventory newEmployee, @PathVariable Long id) {
+  @PutMapping("/products/{id}")
+  Inventory replaceEmployee(@RequestBody Inventory newInventory, @PathVariable Long id) {
     
     return repository.findById(id)
-      .map(employee -> {
-        employee.setNameProd(newEmployee.getNameProd());
-        return repository.save(employee);
+      .map(inventory -> {
+        inventory.setNameProd(newInventory.getNameProd());
+        return repository.save(inventory);
       })
       .orElseGet(() -> {
-        newEmployee.setCodProd(id);
-        return repository.save(newEmployee);
+        newInventory.setCodProd(id);
+        return repository.save(newInventory);
       });
   }
 
-  @DeleteMapping("/employees/{id}")
+  @DeleteMapping("/products/{id}")
   void deleteEmployee(@PathVariable Long id) {
     repository.deleteById(id);
   }
