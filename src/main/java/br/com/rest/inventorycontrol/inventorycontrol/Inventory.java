@@ -9,7 +9,7 @@ import javax.persistence.Id;
 
 public class Inventory {
     
-	private @Id @GeneratedValue BigInteger codProd;
+	private @Id @GeneratedValue Long codProd;
 	private String nameProd;
 	private BigInteger codBar;
     private BigDecimal quantity;
@@ -24,7 +24,7 @@ public class Inventory {
         this.price = price;
 	}
 
-	public BigInteger getCodProd() {
+	public Long getCodProd() {
         return codProd;
     }
 
@@ -58,6 +58,10 @@ public class Inventory {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public void setCodProd(Long codProd) {
+        this.codProd = codProd;
     }
 
     @Override
