@@ -8,15 +8,29 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 public class Inventory {
     
-	private @Id @GeneratedValue Long codProd;
+    @ApiModelProperty(value = "Código do Produto")
+    @Id 
+    @GeneratedValue
+	private Long codProd;
+    
+    @ApiModelProperty(value = "Nome do Produto")
 	private String nameProd;
+
+    @ApiModelProperty(value = "Código de barras")
 	private BigInteger codBar;
+
+    @ApiModelProperty(value = "Quantidade em Estoque")
     private BigDecimal quantity;
+
+    @ApiModelProperty(value = "Preço de Venda")
     private BigDecimal price;
 
+    
 	Inventory() {}
 
 	Inventory(String nameProd, BigInteger codBar, BigDecimal quantity, BigDecimal price) {

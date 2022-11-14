@@ -35,29 +35,29 @@ class InventoryController {
 
   // Single item
   
-  @GetMapping("/products/{id}")
-  Inventory one(@PathVariable Long id) {
+  @GetMapping("/products/{codProd}")
+  Inventory one(@PathVariable Long codProd) {
     
-    return repository.findById(id)
-      .orElseThrow(() -> new InvetoryNotFoundException(id));
+    return repository.findById(codProd)
+      .orElseThrow(() -> new InvetoryNotFoundException(codProd));
   }
 
-  @PutMapping("/products/{id}")
-  Inventory replaceEmployee(@RequestBody Inventory newInventory, @PathVariable Long id) {
+  @PutMapping("/products/{codProd}")
+  Inventory replaceEmployee(@RequestBody Inventory newInventory, @PathVariable Long codProd) {
     
-    return repository.findById(id)
+    return repository.findById(codProd)
       .map(inventory -> {
         inventory.setNameProd(newInventory.getNameProd());
         return repository.save(inventory);
       })
       .orElseGet(() -> {
-        newInventory.setCodProd(id);
+        newInventory.setCodProd(codProd);
         return repository.save(newInventory);
       });
   }
 
-  @DeleteMapping("/products/{id}")
-  void deleteEmployee(@PathVariable Long id) {
-    repository.deleteById(id);
+  @DeleteMapping("/products/{codProd}")
+  void deleteEmployee(@PathVariable Long codProd) {
+    repository.deleteById(codProd);
   }
 }
