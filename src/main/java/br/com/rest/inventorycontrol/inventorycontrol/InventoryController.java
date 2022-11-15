@@ -24,7 +24,7 @@ class InventoryController {
   // Aggregate root
   // tag::get-aggregate-root[]
   @ApiOperation(
-    value = "Retorna uma lista lista de todos os produtos.",
+    value = "Retorna uma lista de JSONs de todos os produtos.",
     position = 0
   )
   @GetMapping("/products")
@@ -61,7 +61,7 @@ class InventoryController {
 
 
   @ApiOperation(
-    value = "Edita produtos.",
+    value = "Edita um produto.",
     position = 3
   )
   @PutMapping("/products/{codProd}")

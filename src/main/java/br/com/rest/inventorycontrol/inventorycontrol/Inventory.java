@@ -16,7 +16,12 @@ public class Inventory {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @ApiModelProperty(name = "Código do Produto", example = "1", position = 0, readOnly = true)
+  @ApiModelProperty(
+    name = "Código do Produto", 
+    example = "1", 
+    position = 0, 
+    readOnly = true
+    )
   private Long codProd;
 
   @ApiModelProperty(
@@ -46,7 +51,12 @@ public class Inventory {
 
 
 
-  @ApiModelProperty(name = "Preço de Venda", example = "1.50", position = 4)
+  @ApiModelProperty(
+    name = "Preço de Venda", 
+    example = "1.50", 
+    position = 4
+    )
+
   private BigDecimal price;
 
 
