@@ -11,7 +11,7 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 ### 📋 Pré-requisitos
 
 ```
-JDK-17
+JDK-14 ou Superior
 Maven-3.8.6
 ```
 Para ambos os binários acima serão necessário que as variávies de ambiente estejam configuradas corretamente.
