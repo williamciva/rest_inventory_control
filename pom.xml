@@ -64,6 +64,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<executable>true</executable>
+					<finalName>rest-inventory-control</finalName>
 				</configuration>
 			</plugin>
 		</plugins>
