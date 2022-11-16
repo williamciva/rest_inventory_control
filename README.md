@@ -89,4 +89,14 @@ java -jar .\target\rest-inventory-control.jar
 * Um brinde 🍻 a todos os usuários do Stack Overflow por salvarem nossas cabeças !!
 
 
+
+## 📄 Diagrama da funcionalidade.
+![](https://github.com/williamciva/rest_inventory_control/blob/main/DiagramaRestInventory.png)
+
+
+
+
 ---
+
+
+
