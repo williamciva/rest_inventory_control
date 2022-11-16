@@ -21,9 +21,6 @@ Para ambos os binários acima serão necessário que as variávies de ambiente e
 
 
 ### 🔧 Instalação
-
-Para realizar a instalação da API em Desenvolvimento será necessário primeiramente realiar um clone desse repositório.
-
 Execute em seu terminal:
 
 ```
@@ -34,12 +31,26 @@ Acesse o repositório clonado utilziando seu terminal:
 
 ```
 cd rest_inventory_control
+
 ```
 
-Se todos os pré requisitos estiverem OK, basta rodar o comando de incialização Maven:
+##### 👷🏻‍♂️ Desenvolvimento
+
+Para realizar a instalação da API em Desenvolvimento se todos os pré requisitos estiverem OK, basta rodar o comando de incialização Maven:
 
 ```
 mvn spring-boot:run
+```
+
+##### 🔥 Produção
+
+Para realizar a instalação da API em produção é recomendável que você faça o build da aplicação em um .JAR e depois o execute utilizando o java. Para isso execute em seu terminal ainda dentro da pasta do projeto:
+
+```
+mvn clean package
+```
+```
+java -jar .\target\rest-inventory-control.jar
 ```
 
 
@@ -49,6 +60,7 @@ mvn spring-boot:run
 * [Spring Boot](https://spring.io) - Framework API
 * [Maven](https://maven.apache.org/) - Gerente de Dependência
 * [H2 database](https://www.h2database.com/html/main.html) - Banco de Dados in memory para testes.
+* [MySql](https://www.mysql.com) - Banco de Dados Relacional utilizado em Produção.
 * [SpringFox](https://springfox.github.io/springfox/) - Utilizado para a Integração com Swagger.
 * [Swagger](https://swagger.io) - Documentação da API.
 
